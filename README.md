@@ -9,6 +9,13 @@ Refactored to-do exercise with alpine.js
 - [x] Keep track of the id of the new to do
 - [ ] Store the data in a JSON
 
+# Languages
+- [x] Html 
+- [x] Tailwind css
+- [x] Alpine.js/js
+
+
+
 
 
 
