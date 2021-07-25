@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do</title>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-indigo-50 text-indigo-900">
+    <div class="container mx-auto max-w-sm px-4 my-4">
+        <div class="bg-white shadow-md rounded px-6 py-4" x-data="todos()">
+            <h2 class="text-2xl font-bold">Todo App</h2>
+
+            <div class="mt-4 mb-6">
+                <input type="text" class="shadow w-full px-2 py-2" x-model="todoTitle" @keydown.enter="addTodo()">
+            </div>
+
+            <ul class="mb-6">
+                <template x-for="todo in todos" :key="todo.id">
+                    <li class="flex items-center justify-between">
+                        <div class="flex items-center" :class="{'line-through' : todo.isComplete}">
+                            <input type="checkbox" x-model="todo.isComplete">
+                            <div x-text="todo.title" class="ml-3"></div>
+                            <button class="text-xl ml-2" @click="deleteTodo(todo.id)">&times;</button>
+                        </div>
+                    </li>
+                </template>
+            </ul>
+        </div>
+    </div>
+
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
